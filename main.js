@@ -17,7 +17,7 @@ background_image = "background.jpg";
 rover_image = "car1.png";
 car2_image = "car2real.jfif"
 
-function add() {
+ function add() {
 background_imgTag = new Image();
 background_imgTag.onload = uploadBackground;
 background_imgTag.src = background_image;
@@ -99,6 +99,7 @@ if(rover_y >=0)
     console.log("When up arrow is pressed = " + rover_x + " - " + rover_y);
     uploadBackground();
     uploadrover();
+    uploadcar2();
 }
 }
 
@@ -111,6 +112,7 @@ if(rover_y <=500)
     console.log("When down arrow is pressed = " + rover_x + " - " + rover_y);
     uploadBackground();
     uploadrover();
+    uploadcar2();
 }
 }
 
@@ -122,6 +124,7 @@ if(rover_x >=0)
     console.log("When left arrow is pressed = " + rover_x + " - " + rover_y);
     uploadBackground();
     uploadrover();
+    uploadcar2();
 }
 }
 
@@ -133,6 +136,7 @@ if(rover_x <=700)
     console.log("When right arrow is pressed = " + rover_x + " - " + rover_y);
     uploadBackground();
     uploadrover();
+    uploadcar2();
 }
 }
 
@@ -144,6 +148,7 @@ if(car2_y >=0)
     console.log("When the W key is pressed = " + car2_x + " - " + car2_y);
     uploadBackground();
     uploadcar2();
+    uploadrover();
 }
 }
 
@@ -156,6 +161,7 @@ if(car2_y <=500)
     console.log("When the S key is pressed = " + car2_x + " - " + car2_y);
     uploadBackground();
     uploadcar2();
+    uploadrover();
 }
 }
 
@@ -167,6 +173,7 @@ if(car2_x >=0)
     console.log("When the A key is pressed = " + car2_x + " - " + car2_y);
     uploadBackground();
     uploadcar2();
+    uploadrover();
 }
 }
 
@@ -178,5 +185,17 @@ if(car2_x <=700)
     console.log("When the D key is pressed = " + car2_x + " - " + car2_y);
     uploadBackground();
     uploadcar2();
+    uploadrover();
 }
+}
+
+if (rover_x > 700)
+{
+    console.log("Car 1");
+    document.getElementById("game_status").innerHTML = "Car 1 wins";
+}
+else if(car2_x > 700)
+{
+    console.log("Car 2");
+    document.getElementById("game_status").innerHTML = "Car 2 wins";
 }
